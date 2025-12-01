@@ -446,9 +446,9 @@ export const InteractiveDemo = () => {
                     <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 hover:scale-110 transition-transform cursor-pointer shadow-lg" />
                     <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-br from-green-400 to-green-600 hover:scale-110 transition-transform cursor-pointer shadow-lg" />
                   </div>
-                  <div className="flex items-center gap-2 sm:gap-3 px-2 py-1.5 sm:px-3 sm:py-2 md:px-5 md:py-2.5 bg-background/80 rounded-lg sm:rounded-xl border border-border/50 shadow-lg backdrop-blur-sm flex-shrink min-w-0">
+                  <div className="flex items-center gap-2 sm:gap-3 px-2 py-1.5 sm:px-3 sm:py-2 md:px-5 md:py-2.5 bg-background/80 rounded-lg sm:rounded-xl border border-border/50 shadow-lg backdrop-blur-sm">
                     <Code className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
-                    <span className="text-xs sm:text-sm md:text-base font-bold text-foreground truncate">
+                    <span className="hidden sm:inline text-xs sm:text-sm md:text-base font-bold text-foreground">
                       {codeExamples[activeDemo].language}
                     </span>
                   </div>
