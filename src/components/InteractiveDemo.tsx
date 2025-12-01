@@ -440,28 +440,28 @@ export const InteractiveDemo = () => {
 
               <div className="relative bg-gradient-to-br from-card/95 via-card/80 to-card/95 border-2 border-border/40 hover:border-primary/50 rounded-3xl overflow-hidden shadow-2xl hover:shadow-glow backdrop-blur-xl transition-all duration-500">
                 {/* Premium editor header */}
-                <div className="flex items-center justify-between px-8 py-6 border-b-2 border-border/30 bg-gradient-to-r from-muted/50 via-muted/30 to-muted/50 backdrop-blur-sm">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-red-400 to-red-600 hover:scale-110 transition-transform cursor-pointer shadow-lg" />
-                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 hover:scale-110 transition-transform cursor-pointer shadow-lg" />
-                    <div className="w-4 h-4 rounded-full bg-gradient-to-br from-green-400 to-green-600 hover:scale-110 transition-transform cursor-pointer shadow-lg" />
+                <div className="flex items-center justify-between px-3 sm:px-6 md:px-8 py-3 sm:py-4 md:py-6 border-b-2 border-border/30 bg-gradient-to-r from-muted/50 via-muted/30 to-muted/50 backdrop-blur-sm gap-2">
+                  <div className="hidden sm:flex items-center gap-2.5">
+                    <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-br from-red-400 to-red-600 hover:scale-110 transition-transform cursor-pointer shadow-lg" />
+                    <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600 hover:scale-110 transition-transform cursor-pointer shadow-lg" />
+                    <div className="w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gradient-to-br from-green-400 to-green-600 hover:scale-110 transition-transform cursor-pointer shadow-lg" />
                   </div>
-                  <div className="flex items-center gap-3 px-5 py-2.5 bg-background/80 rounded-xl border border-border/50 shadow-lg backdrop-blur-sm">
-                    <Code className="w-5 h-5 text-accent" />
-                    <span className="text-base font-bold text-foreground">
+                  <div className="flex items-center gap-2 sm:gap-3 px-2 py-1.5 sm:px-3 sm:py-2 md:px-5 md:py-2.5 bg-background/80 rounded-lg sm:rounded-xl border border-border/50 shadow-lg backdrop-blur-sm flex-shrink min-w-0">
+                    <Code className="w-4 h-4 sm:w-5 sm:h-5 text-accent flex-shrink-0" />
+                    <span className="text-xs sm:text-sm md:text-base font-bold text-foreground truncate">
                       {codeExamples[activeDemo].language}
                     </span>
                   </div>
                   <button
                     onClick={handleRun}
                     disabled={isRunning}
-                    className="relative group/btn flex items-center gap-1.5 sm:gap-2 md:gap-3 px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 bg-gradient-primary text-primary-foreground rounded-lg sm:rounded-xl font-bold hover:scale-105 active:scale-95 hover:shadow-glow transition-all disabled:opacity-50 disabled:hover:scale-100 overflow-hidden shadow-lg touch-manipulation whitespace-nowrap"
+                    className="relative group/btn flex items-center gap-1 sm:gap-1.5 md:gap-2 lg:gap-3 px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-7 lg:py-3.5 bg-gradient-primary text-primary-foreground rounded-lg sm:rounded-xl font-bold hover:scale-105 active:scale-95 hover:shadow-glow transition-all disabled:opacity-50 disabled:hover:scale-100 overflow-hidden shadow-lg touch-manipulation whitespace-nowrap flex-shrink-0"
                   >
                     {isRunning && (
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" style={{ backgroundSize: '200% 100%' }} />
                     )}
-                    <Play className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 relative z-10 flex-shrink-0 ${isRunning ? "animate-pulse" : "group-hover/btn:scale-110 transition-transform"}`} />
-                    <span className="relative z-10 text-sm sm:text-base md:text-lg">{isRunning ? "Запуск..." : "Запустить"}</span>
+                    <Play className={`w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 relative z-10 flex-shrink-0 ${isRunning ? "animate-pulse" : "group-hover/btn:scale-110 transition-transform"}`} />
+                    <span className="relative z-10 text-xs sm:text-sm md:text-base lg:text-lg">{isRunning ? "Запуск..." : "Запустить"}</span>
                   </button>
                 </div>
 
