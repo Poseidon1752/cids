@@ -178,18 +178,26 @@ export const GravityDemo = ({ isRunning, showOutput }: GravityDemoProps) => {
   }, [planets, showOutput, showTrails]);
 
   const handleCanvasClick = (e: React.MouseEvent<HTMLCanvasElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 600;
-    const y = ((e.clientY - rect.top) / rect.height) * 400;
+    if (!showOutput) return;
+    const canvas = e.currentTarget;
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (e.clientX - rect.left) * scaleX;
+    const y = (e.clientY - rect.top) * scaleY;
     createPlanet(x, y);
   };
 
   const handleCanvasTouch = (e: React.TouchEvent<HTMLCanvasElement>) => {
+    if (!showOutput) return;
     e.preventDefault();
-    const rect = e.currentTarget.getBoundingClientRect();
+    const canvas = e.currentTarget;
+    const rect = canvas.getBoundingClientRect();
     const touch = e.touches[0];
-    const x = ((touch.clientX - rect.left) / rect.width) * 600;
-    const y = ((touch.clientY - rect.top) / rect.height) * 400;
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = (touch.clientX - rect.left) * scaleX;
+    const y = (touch.clientY - rect.top) * scaleY;
     createPlanet(x, y);
   };
 
@@ -235,8 +243,9 @@ export const GravityDemo = ({ isRunning, showOutput }: GravityDemoProps) => {
                 width={600}
                 height={400}
                 onClick={handleCanvasClick}
+                onMouseDown={handleCanvasClick}
                 onTouchStart={handleCanvasTouch}
-                className="w-full h-auto bg-black rounded-lg border-2 border-primary/20 cursor-crosshair touch-none"
+                className="w-full h-auto bg-black rounded-lg border-2 border-primary/20 cursor-crosshair touch-none active:cursor-pointer"
               />
               <div className="absolute bottom-4 left-4 bg-background/90 backdrop-blur-sm border border-border/50 rounded-lg px-4 py-2 text-xs text-muted-foreground">
                 <div className="flex items-center gap-2">

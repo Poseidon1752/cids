@@ -338,7 +338,7 @@ export const InteractiveDemo = () => {
 
           {/* Main heading with premium typography */}
           <div className="space-y-2">
-            <h2 className="text-6xl md:text-8xl font-black leading-none tracking-tight text-foreground">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black leading-tight tracking-tight text-foreground">
               Интерактивное
               <br />
               <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -348,11 +348,11 @@ export const InteractiveDemo = () => {
           </div>
 
           {/* Enhanced description */}
-          <div className="space-y-3 max-w-4xl mx-auto">
-            <p className="text-2xl md:text-3xl text-foreground/90 font-semibold leading-relaxed">
+          <div className="space-y-3 max-w-4xl mx-auto px-4">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-foreground/90 font-semibold leading-relaxed">
               Попробуй разные языки программирования и моментально увидь результат
             </p>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-muted-foreground leading-relaxed">
               Нажимай на примеры кода, чтобы запустить их и увидеть магию программирования в действии
             </p>
           </div>
@@ -455,13 +455,13 @@ export const InteractiveDemo = () => {
                   <button
                     onClick={handleRun}
                     disabled={isRunning}
-                    className="relative group/btn flex items-center gap-2 sm:gap-3 px-4 py-2.5 sm:px-6 sm:py-3 lg:px-7 lg:py-3.5 bg-gradient-primary text-primary-foreground rounded-lg sm:rounded-xl font-bold hover:scale-105 active:scale-95 hover:shadow-glow transition-all disabled:opacity-50 disabled:hover:scale-100 overflow-hidden shadow-lg touch-manipulation"
+                    className="relative group/btn flex items-center gap-1.5 sm:gap-2 md:gap-3 px-3 py-2 sm:px-4 sm:py-2.5 md:px-6 md:py-3 lg:px-7 lg:py-3.5 bg-gradient-primary text-primary-foreground rounded-lg sm:rounded-xl font-bold hover:scale-105 active:scale-95 hover:shadow-glow transition-all disabled:opacity-50 disabled:hover:scale-100 overflow-hidden shadow-lg touch-manipulation whitespace-nowrap"
                   >
                     {isRunning && (
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer" style={{ backgroundSize: '200% 100%' }} />
                     )}
-                    <Play className={`w-5 h-5 sm:w-6 sm:h-6 relative z-10 ${isRunning ? "animate-pulse" : "group-hover/btn:scale-110 transition-transform"}`} />
-                    <span className="relative z-10 text-base sm:text-lg">{isRunning ? "Запуск..." : "Запустить"}</span>
+                    <Play className={`w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 relative z-10 flex-shrink-0 ${isRunning ? "animate-pulse" : "group-hover/btn:scale-110 transition-transform"}`} />
+                    <span className="relative z-10 text-sm sm:text-base md:text-lg">{isRunning ? "Запуск..." : "Запустить"}</span>
                   </button>
                 </div>
 
